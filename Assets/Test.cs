@@ -24,16 +24,15 @@ public class Boss
 
     public void Magic(int mp)
     {
-        this.mp -= mp;
-
-        if (this.mp >= 0)
+        if (this.mp >= 5)
         {
+            this.mp -= mp;
             Debug.Log("魔法攻撃をした。残りMPは" + this.mp);
         }
         else
-            {
+        {
             Debug.Log("MPが足りないため魔法が使えない。");
-            }
+        }
     }
     
 }
@@ -54,8 +53,7 @@ public class Test : MonoBehaviour
        
         for (int i = 0; i <= 10; i++)
         {
-            lastboss.Magic(5);
-           
+            lastboss.Magic(5); 
         }
     }
 
